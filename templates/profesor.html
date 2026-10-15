@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block c %}
+<h1>Mis materias</h1><div class="grid">
+{% for m in materias %}<a class="card mat" href="{{ url_for('materia', mid=m.id) }}"><h2>{{ m.nombre }}</h2>
+<p>{{ m.horario }}</p><p>{{ m.alumnos }} estudiantes</p><span>Capturar calificaciones →</span></a>{% endfor %}</div>{% endblock %}

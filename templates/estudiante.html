@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block c %}
+<h1>Mis calificaciones</h1>
+<div class="resumen"><div><small>Promedio</small><strong>{{ '%.1f'|format(promedio) if promedio is not none else '—' }}</strong></div>
+<div><small>Materias</small><strong>{{ filas|length }}</strong></div></div>
+<section class="card"><div class="scroll"><table><thead><tr><th>Materia</th><th>Horario</th><th>Profesor</th><th>Calificación</th></tr></thead><tbody>
+{% for f in filas %}<tr><td>{{ f.nombre }}</td><td>{{ f.horario }}</td><td>{{ f.profesor }}</td>
+<td>{% if f.calificacion is none %}<span class="pend">Pendiente</span>{% else %}<span class="nota {{ 'ok' if f.calificacion >= 6 else 'bajo' }}">{{ '%.1f'|format(f.calificacion) }}</span>{% endif %}</td></tr>
+{% endfor %}</tbody></table></div></section>{% endblock %}

@@ -1,0 +1,9 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block t %}Portal Académico{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head><body>
+<header><a class="logo" href="/">Portal Académico</a>
+{% if session.uid %}<form method="post" action="/logout"><input type="hidden" name="csrf" value="{{ csrf() }}">
+<span>{{ session.nombre }}</span><button class="sec">Cerrar sesión</button></form>{% endif %}</header>
+<main>{% for m in get_flashed_messages() %}<p class="aviso" role="alert">{{ m }}</p>{% endfor %}
+{% block c %}{% endblock %}</main></body></html>

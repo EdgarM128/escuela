@@ -1,0 +1,110 @@
+:root{
+    --bg:#f4f6fb;
+    --fg:#1c2433;
+    --card:#fff;
+    --pri:#2457c5;
+    --bd:#dde3ee;
+    --ok:#117a3d;
+    --bad:#b3261e
+}
+
+@media(prefers-color-scheme:dark){
+    :root{
+        --bg:#10141c;
+        --fg:#e8ecf4;
+        --card:#1a2130;
+        --pri:#6d9bff;
+        --bd:#2b3448;
+        --ok:#5fd18a;
+        --bad:#ff8a80
+    }
+}
+*{box-sizing:border-box}body{margin:0;font:16px/1.5 system-ui,sans-serif;background:var(--bg);color:var(--fg)}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:.8rem 1.2rem;
+    background:var(--card);
+    border-bottom:1px solid var(--bd)
+}
+
+header form{
+    display:flex;
+    gap:.8rem;
+    align-items:center;
+    margin:0
+}
+.logo{
+    font-weight:700;
+    color:var(--pri);
+    text-decoration:none
+}
+main{
+    max-width:860px;
+    margin:0 auto;
+    padding:1.2rem
+}
+a{
+    color:var(--pri)
+}
+.card{
+    background:var(--card);
+    border:1px solid var(--bd);
+    border-radius:12px;
+    padding:1.2rem
+}
+.estrecha{
+    max-width:380px;
+    margin:3rem auto
+}
+label{
+    display:block;
+    margin-bottom:1rem;
+    font-weight:600
+}
+input{
+    width:100%;
+    padding:.7rem;
+    border:1px solid var(--bd);
+    border-radius:8px;
+    font:inherit;
+    background:var(--bg);
+    color:var(--fg);
+    margin-top:.3rem
+}
+
+button{
+    padding:.7rem 1.3rem;
+    border:0;
+    border-radius:8px;
+    background:var(--pri);
+    color:#fff;
+    font:inherit;
+    font-weight:600;
+    cursor:pointer;
+    min-height:44px;
+    button.sec{
+        background:transparent;
+        color:var(--pri);border:1px solid var(--pri)}
+}:focus-visible{outline:3px solid var(--pri);outline-offset:2px}
+
+.aviso{
+    background:#fff3cd;
+    color:#5c4400;
+    padding:.8rem 1rem;
+    border-radius:8px
+}
+
+.scroll{overflow-x:auto}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:.7rem;border-bottom:1px solid var(--bd)}
+
+.resumen{display:flex;gap:1rem;margin-bottom:1rem}.resumen div{flex:1;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:1rem}
+
+.resumen small{display:block;opacity:.7}.resumen strong{font-size:1.8rem}
+
+.nota{font-weight:700}.ok{color:var(--ok)}.bajo{color:var(--bad)}.pend{opacity:.6}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem}.mat{text-decoration:none;color:inherit}.mat h2{margin:0 0 .3rem}
+
+.nota-in{width:90px;margin:0}
